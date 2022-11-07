@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-y:hidden ;
+}
+.Nav-bar{
+width:100%;
+}
+.Nav-container{
+  display: flex;
+  display: grid;
+  grid-template-columns: 40px 450px 200px 200px 400px 30px auto;
+  align-items: center;
+  background-color:#fff; 
+  padding: 10px 10px 10px 10px;
+  
+}
+.Nav-container p{
+background-color: #fff;
+display: inline-block;
+
+}
+
+.searchbar{
+background-color: #fff;
+border: 0.5px solid black;
+height: 30px;
+width: 15vw;
+border-radius: 20px;
+text-align: center;
+}
+.Nav-pic{
+  background-color: #fff;
+  width: 25px;
+
+}
