@@ -1,6 +1,28 @@
 *{
+    background-color: #AAAAAA;
+}
+.Home{
     margin: 0;
     padding: 0;
     background-color: #AAAAAA;
+    overflow-x: scroll;
     /* background-color: #E8E8E8; */
 }
+.Home-grid{
+    display: flex;
+    justify-content: space-between;
+
+}
+.Home-content{
+    height: 10px;
+    background-color: red;
+    width: 20px;
+    border: 2px solid black;
+   
+    
+}
+@media only screen and (max-width: 1000px) {
+   .Home-grid{
+    display: none;
+   }
+  }

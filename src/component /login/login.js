@@ -6,7 +6,7 @@ import image from './public/image.png';
 import './login.css';
 function Login(){
     return(
-        <div>
+        <div className='main-login'>
         <div className='flex-container'>
         <div className='left'><img className='Logo' src={Logo}/>
         <h1 className='welcome'>Welcome to, Hashtag </h1>

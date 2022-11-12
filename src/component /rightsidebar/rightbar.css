@@ -1,0 +1,9 @@
+.Rightbar{
+    background-color: #fff;
+    display: flex;
+    padding: 20px;
+    height: 600px;
+    width:260px;
+    border-radius: 20px;
+    margin:20px 20px auto auto;
+}

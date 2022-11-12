@@ -4,4 +4,44 @@
     height: 600px;
     width:260px;
     border-radius: 20px;
+    padding: 20px;
+   
+   
+}
+.Left-bar_Upper-Part{
+    background-color: white;
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 50px;
+    width:200px;
+    align-items: center;
+    
+}
+.Left-Bar-Name{
+    display: inline-block;
+}
+p{
+    background-color: white;
+    color: black;
+}
+.Left-Bar-Profile{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    
+}
+.Left-Bar-Setting{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    
+}
+.Left-Bar-Location{
+    font-size: 12px;
+    display: inline-block;
+}
+h3{
+    background-color: white;
+    color: black;
 }
