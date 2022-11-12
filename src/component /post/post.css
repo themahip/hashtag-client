@@ -1,7 +1,51 @@
-.Post-Container{
+.Post-Container-Home{
+  background-color: white;
+  margin-top: 20px;
+  width:750px;
+  padding: 20px;
+  color: #626262;
+  border-radius: 20px;
+}
+.Post-Hashtag{
     background-color: white;
-    width: 100px;
-    height: 20px;
-    margin-top: 20px;
-    border-radius: 20px;
+    display: flex;
+    align-items: center ;
+   
+}
+.Post-Hashtag img{
+    background: transparent;
+    width: 30px;
+    margin-right: 10px;
+}
+.Post-Hashtag small{
+    background-color: white;
+
+}
+.Small{
+    font-size: 12px;
+}
+.Written-Post{
+    margin: 10px 0;
+    margin-left: 40px;
+    text-align: justify;
+}
+.React-Home{
+    margin-left: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.React-Home img{
+    width: 20px;
+    background-color: white;
+   
+}
+.React-Home p{
+    margin-left: 5px;
+    margin-right: 15px;
+    font-size: 12px;
+}
+.Home-Nav{
+    position: sticky;
+    top:0;
 }

@@ -7,7 +7,7 @@ import Profile from "./public/profile.png";
 import Trending from "./public/trending.png";
 
 function NavBar(){
-    return(<div>
+    return(<div className="home-nav">
         <div className="Nav-bar">
         <div className="Nav-container">
         <img  className="Nav-pic" src={Logo}/>

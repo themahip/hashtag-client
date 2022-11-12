@@ -26,3 +26,9 @@
     display: none;
    }
   }
+
+  .home-nav{
+
+    position: sticky;
+    top:0px;
+  }

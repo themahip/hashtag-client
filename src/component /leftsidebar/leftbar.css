@@ -5,7 +5,9 @@
     width:260px;
     border-radius: 20px;
     padding: 20px;
-   
+    position: sticky;
+    top:0;
+    z-index: 100;
    
 }
 .Left-bar_Upper-Part{
