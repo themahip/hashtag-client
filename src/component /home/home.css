@@ -1,6 +1,4 @@
-*{
-    background-color: #AAAAAA;
-}
+
 .Home{
     margin: 0;
     padding: 0;
@@ -21,9 +19,20 @@
    
     
 }
-@media only screen and (max-width: 1000px) {
-   .Home-grid{
+@media only screen and (max-width: 1200px) {
+   .response1{
     display: none;
+   }
+   .response2{
+    display: none;
+   }
+   .Home-grid{
+    margin-left: 10vw;
+   }
+   .Home-Container{
+    display: grid;
+    align-items: center;
+
    }
   }
 
@@ -31,4 +40,5 @@
 
     position: sticky;
     top:0px;
+    
   }

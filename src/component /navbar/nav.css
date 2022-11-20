@@ -10,7 +10,7 @@ width:100%;
 .Nav-container{
   display: flex;
   display: grid;
-  grid-template-columns: 40px 450px 200px 200px 400px 30px auto;
+  grid-template-columns: 40px 32vw 10vw 10vw 35vw 2vw auto;
   align-items: center;
   background-color:#fff; 
   padding: 10px 10px 10px 10px;
@@ -33,5 +33,13 @@ text-align: center;
 .Nav-pic{
   background-color: #fff;
   width: 25px;
+
+}
+
+.Nav-container img:hover{
+    background-color: #BEDCF3;
+}
+
+@media only screen and (max-width:767px){
 
 }

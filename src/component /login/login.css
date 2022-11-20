@@ -8,12 +8,14 @@
     width:50px;
     margin-left: 110px;
     margin-bottom: 30px;
+    background-color: white;
 }
 
 .welcome{
     
     color:#152D73;
     margin-top:10px;
+    background-color: white;
 }
 .proceed{
     margin-top: 6px;
@@ -21,6 +23,7 @@
 }
 .google{
     margin-top:30px;
+    background-color: white;
     margin-bottom: 30px;;
     color:white;
     border:1px solid black;
@@ -34,11 +37,13 @@
 display: flex;
 justify-content: center;
 vertical-align: center;
+background-color: white;
  
 }
 .google-logo{
     
     width:20px;
+    background-color: white;
    
 }
 .login-google{
@@ -49,23 +54,29 @@ vertical-align: center;
 .hr1{
     margin-top: 20px;
     width: 135px;
+    background-color: white;
     display: inline-block;
+    
 }
 .or{
     display: inline-block;
     margin-left: 9px;
+    background-color: white;
 }
 .hr2{
     margin-top: 20px;
     margin-left:9px;
     width: 150px;
     display: inline-block;
+    background-color: white;
 }
 .line{
     margin-top: 30px;
+    background-color: white;
 }
 .forms{
     margin-top: 30px;
+    background-color: white;
 }
 .email{
    margin-top:40px;
@@ -75,14 +86,17 @@ vertical-align: center;
     padding:10px;
     border-radius: 20px;
     border-bottom:1px solid #eee;
+    background-color: white;
    
 }
 label{
     display: inline-block;
+    background-color: white;
 }
 .BOX{
     margin-top: 20px;
     margin-left:10px;
+    background-color: white;
     
 }
 .remember{
@@ -91,7 +105,8 @@ label{
 }
 .forget{
     display: inline-block;
-    margin-left: 70px;;
+    margin-left: 70px;
+    background-color: white;
     
 }
 .Login{
@@ -102,12 +117,15 @@ label{
     padding: 10px;
     border-radius: 20px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    
 }
 .else{
     margin-top:20px;
 }
 .signup{
+    background-color: white;
     color:#152D73;
+    
 }
 .image{
    height:100vh;
@@ -123,6 +141,7 @@ label{
 .left{
     margin-left: 150px;
     margin-top: 40px;
+    background-color: white;
 }
 .check{
     width: 15px;;

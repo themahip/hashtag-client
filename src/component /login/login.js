@@ -1,10 +1,22 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Logo from './public/logo.png';
 import {Link} from "react-router-dom"
 import googleLogo from './public/googleLogo.png';
 import image from './public/image.png';
 import './login.css';
 function Login(){
+    const [loginInfo, setLoginInfo]=useState({
+        email:"",
+        password:""
+    });
+function handle(event){
+    const {value,name }=event.target;
+    setLoginInfo(pre=>{return{
+    ...pre,
+    [name]:value
+    }});
+}
+
     return(
         <div className='main-login'>
         <div className='flex-container'>
@@ -24,9 +36,9 @@ function Login(){
             </div>
             <div clasName='forms'>
          
-                <input className='email'type='email' placeholder='Email' />
+                <input className='email'type='email' onChange={handle} name="email" placeholder='Email' value={loginInfo.email} />
                 <br />
-                <input className='email'type='Password' placeholder='Password' />
+                <input className='email'type='Password' onChange={handle} name="password"placeholder='Password' value={loginInfo.password} />
 
             </div>
             <div className='BOX'>
