@@ -1,54 +1,81 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../navbar/Nav";
+
 import "./home.css";
 import Leftbar from "../leftsidebar/leftbar";
 import Rightbar from "../rightsidebar/rightbar";
 import PostHashtag from "../posthashtag/posthastag";
 import Post from "../post/post";
+import dummy from "../dummy/dummy";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import baseurl from "../../config";
 
-
-const dummy=[{
-    id:"2",
-    tag:"summer_food",
-    created_by:"mahip Adhikari",
-    post:"#Elon actually knows that the #tech #bubble is busting & #jobs are drying up. He is right, that is happening, But unaware, thanks to security issues, western nations now hire within & don’t outsource to 3rd world countries for cheap #IT #employees. Too many spies"
-    
-},
-{
-    id:"2",
-    tag:"summer_food",
-    created_by:"mahip Adhikari",
-    post:"#Elon actually knows that the #tech #bubble is busting & #jobs are drying up. He is right, that is happening, But unaware, thanks to security issues, western nations now hire within & don’t outsource to 3rd world countries for cheap #IT #employees. Too many spies"
-
-},
-{
-    id:"2",
-    tag:"summer_food",
-    created_by:"mahip Adhikari",
-    post:"#Elon actually knows that the #tech #bubble is busting & #jobs are drying up. He is right, that is happening, But unaware, thanks to security issues, western nations now hire within & don’t outsource to 3rd world countries for cheap #IT #employees. Too many spies"
-
-}]
 
 function Home(){
+
+    const token =JSON.parse(localStorage.getItem("jwt"));
+    const navigate=useNavigate();
+    const [name,setName]=useState("");
+    const [post,setPost]=useState([]);
+
+    const validate=async()=>{
+            await axios.get(`${baseurl}/api/user/self-info/`,{
+                headers:{
+                    Authorization:`token ${token}`
+                }
+               
+            }).then((res)=>{
+           
+            setName(`${res.data.first_name} ${res.data.last_name}`)
+            
+        })      
+        }
+    
+
+    const getPost=async()=>{
+        
+        await axios.get(`${baseurl}/api/post/list/`,
+            { headers: { Authorization:`token ${token}` } }).then((res)=>{
+               console.log(res);
+                let data=res.data;
+                setPost(data)
+          
+            }) }
+            
+            useEffect(
+                ()=>{
+                    getPost();
+                    validate();
+                },[])
+           
+
     return(
-        <div className="Home">
+     
+        <div className="Home"> 
+     
         <div className="home-nav">
-        <NavBar/>
+        <NavBar name={name}/>
         </div>
          
        <div className="Home-grid">
        <div className="response1"><Leftbar /></div>
        
        <div className="Home-Container">
-       <PostHashtag />
+       <PostHashtag name={name}/> 
   
-       {dummy.map((item)=>{
+       {
+        post.map((item)=>{
        return(
         <Post 
-                key={item.id}
-                tag={item.tag}
-                created={item.created_by}
-                post={item.post}
+                id={item.tag.id}
+                id_post={item.id}
+                tag={item.tag.title}
+                created={item.tag.created_by.first_name}
+                post={item.content}
+                postId={item.id}
+                downvote={item.downvote_count}
+                upvote={item.upvote_count}
         />
         ) 
        })}
@@ -61,5 +88,5 @@ function Home(){
       
         </div>
     )
-}
+    }
 export default Home;

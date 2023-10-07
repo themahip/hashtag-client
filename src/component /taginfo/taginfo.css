@@ -1,0 +1,60 @@
+.hastagpicture{
+    height: 200px;
+    background-color:#E9E9E9;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0px 0px 20px 20px;
+    
+}
+.taginfocontainer{
+    background-color: white;
+    width:1000px;
+    margin-bottom: 10px;
+    height: 20vh;
+    margin:-20px auto 10px auto;
+ 
+   margin-right: auto;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+.tagnamecontainer{
+    display: flex;
+   margin-left: 20px;
+    
+}
+.tagname{
+    margin-left: 10px;
+}
+.tagname p{
+    margin-top: 3px;
+}
+.tagnamecontainer img{
+    height: 60px;
+}
+.taginfocontainer button{
+    width: 150px;
+    height: 35px;
+    margin-left: auto;
+    margin-right: 30px;
+    border-radius: 10px;
+    background-color: #3377FA;
+    border:none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.taginfocontainer button img{
+    width: 20px;
+    margin-right:10px ;
+}
+.taginfocontainer button:hover{
+background-color: #76A5FF;
+}
+.tagposthashtag .selecthashtag input{
+    display: none;
+}

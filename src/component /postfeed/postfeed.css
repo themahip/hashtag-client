@@ -1,0 +1,34 @@
+.create-post{
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.work{
+    display: grid;
+}
+.work textarea{
+    background-color: white;
+    
+    width: 600px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    resize: none;
+
+
+}
+.work button{
+    width: 200px;
+    background-color: #3377FA;
+    border: none;
+    border-radius: 7px;
+}
+.work button:hover{
+    background-color: #76A5FF;
+}

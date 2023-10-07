@@ -3,13 +3,29 @@ import "./posthastag.css"
 import Profile from "./public/profile.png"
 import Smiley from "./public/smiley.png"
 import Image from "./public/image.png"
-function PostHashtag(){
-
+import axios from "axios";
+import baseurl from "../../config";
+function PostHashtag(props){
+    const token =JSON.parse(localStorage.getItem("jwt"));
     const [postInfo,setPostInfo]=useState({
         hashtag:"",
         post:""
 
     });
+    function posthashtag(){
+       console.log(postInfo.hashtag);
+        axios.post(`${baseurl}/api/tag/`,{
+            title:postInfo.hashtag,
+            content:postInfo.post
+        },{
+            headers:{
+                Authorization:`token ${token}`}
+        }
+       
+        ).then(res=>{
+                console.log(res);
+            })
+    }
 
     function handleChange(event){
         const{value, name}=event.target;
@@ -24,17 +40,25 @@ function PostHashtag(){
     return(
     <div>
         <div className="Write-Post-Container">
+        <div className="post-container-uppper">
         <img src={Profile}/>
-        <p>John Doe</p>
-        <p></p>
-        <textarea type="text" onChange={handleChange} className="Wite-Post-Hashtag-Area" placeholder="Whats your hashtag ......"rows="3" name="hashtag" value={postInfo.hashtag} ></textarea>
-        <p></p>
-        <textarea type="text" className="Wite-Post-Text-Area" onChange={handleChange} name="post" placeholder="Whats your post ......." rows="3" value={postInfo.post}/>
-        <p></p>
-        <div className="Upload-Container">  <img className="Image-Post" src={Image}/>
-        <p>Image</p>
-        <button className="Post-Hashtag-button">Post</button>
+        <p>{props.name}</p>
         </div>
+        
+        <div className="post-container-left">
+       
+<div className="selecthashtag"><button>Create Hashtag</button></div>
+<textarea type="text" onChange={handleChange} className="Wite-Post-Hashtag-Area" placeholder="Name your hashtag ......"rows="3" name="hashtag" value={postInfo.hashtag} ></textarea>
+<p></p>
+<textarea type="text" className="Wite-Post-Text-Area" onChange={handleChange} name="post" placeholder="about your hashtag ......." rows="3" value={postInfo.post}/>
+<p></p>
+
+<div className="Upload-Container"> 
+<button onClick={posthashtag}>Create</button>
+</div>
+        </div>
+
+       
       
         </div>
 

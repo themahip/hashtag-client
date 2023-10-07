@@ -1,30 +1,43 @@
 import {useState,React} from "react";
 import {Link }from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import axios from 'axios';
+import baseurl from "../../config";
 import Logo from "./public/logo.png"
 import "./signup.css"
 import googleLogo from "./public/googleLogo.png"
 import image from "./public/image.png"
 
 function Signup(){
-    const [Name, setName]=useState("");
+    let navigate = useNavigate();
+    const [Fname, setFname]=useState("");
+    const [Lname,setLname]=useState("");
     const [username, setUsername]=useState("");
     const [Email, setEmail]=useState("");
     const [Password, setPassword]=useState("");
-    const [ConfirmPassword, setConfirmPassword]=useState("");
-    
-    const [Contact,setContact]=useState("");
-    
-    function Add(){
-        axios.post("https://hashtagnp.herokuapp.com/user/",{
-            name:Name,
+    const [error, setError]=useState("");
+   
+    const Add=async(e)=>{
+        e.preventDefault();
+        axios.post(`${baseurl}/api/user/`,{
+            first_name:Fname,
+            last_name:Lname,
             username:username,
             email:Email,
             password:Password,
-            ConfirmPassword:ConfirmPassword
+        
         }).then((res)=>{
-            console.log(res.data);
+         
+            if(res.status===201){
+                
+                navigate("/login");
+            }
+            else{
+           
+            setError(res.data.error);
+                           navigate("/signup")
+            }
         })
     }
     return(
@@ -46,8 +59,12 @@ function Signup(){
             <hr className='hr2'/>
             <br/>
 
-                <input className="signup-input" placeholder="Name" onChange={(event)=>{
-                setName(event.target.value);
+                <input className="signup-input" placeholder="First Name" onChange={(event)=>{
+                setFname(event.target.value);
+            }}/>
+            <br/>
+            <input className="signup-input" placeholder="Last Name" onChange={(event)=>{
+                setLname(event.target.value);
             }}/>
             <br/>
               <input className="signup-input" type="username" placeholder="User Name" onChange={(event)=>{
@@ -62,12 +79,12 @@ function Signup(){
                 setPassword(event.target.value);
             }}/>
             <br/>
-            <input className="signup-input" type="Password"  placeholder="Confirm Password" onChange={(event)=>{
-                setConfirmPassword(event.target.value);
-            }}/>
-            <br/>
+            
+
 
             <button onClick={Add}>signup</button>
+            <p style={{color:"red"}}>{error}</p>
+            <br/>
             <p>Already have an account? <span><Link to="/login">Login</Link></span></p>
                 </div>
                 <img className="image" src={image}/>

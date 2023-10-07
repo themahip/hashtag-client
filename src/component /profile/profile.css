@@ -1,0 +1,14 @@
+.Profilepage{
+    background-color: #C9D0D4;
+    
+
+}
+.Profileflex{
+display: flex;
+width: 100vw;
+    height: 100vh;
+}
+.profilemiddle{
+margin-left: auto;
+margin-right: auto;
+}

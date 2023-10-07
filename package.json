@@ -2,6 +2,7 @@
   "name": "hashtag",
   "version": "0.1.0",
   "private": true,
+  "proxy":"https://3e38-2400-1a00-b060-f4c8-e500-17c2-1769-2ac1.in.ngrok.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",

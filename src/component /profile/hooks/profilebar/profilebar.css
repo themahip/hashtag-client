@@ -1,0 +1,21 @@
+.profilebar{
+    margin: 10px 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+
+    
+}
+.profilebar ul{
+    display: flex;
+    font-weight: 600;
+}
+.profilebar li{
+    margin-right: 20px;
+    margin-left:20px ;
+}
+.profilebar li:hover{
+    text-decoration: underline;
+    color:#3377FA;
+    cursor: pointer;
+}

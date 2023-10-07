@@ -3,20 +3,40 @@ import Logo from './public/logo.png';
 import {Link} from "react-router-dom"
 import googleLogo from './public/googleLogo.png';
 import image from './public/image.png';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
+import baseurl from "../../config";
 function Login(){
-    const [loginInfo, setLoginInfo]=useState({
-        email:"",
-        password:""
-    });
-function handle(event){
-    const {value,name }=event.target;
-    setLoginInfo(pre=>{return{
-    ...pre,
-    [name]:value
-    }});
-}
+    let navigate=useNavigate();
+  const [username, setUserName]=useState("");
+  const [password,setPassword]=useState("");
+  const [error,setError]=useState("");
 
+    const  Add=(event)=>{
+       
+        
+        axios.post(`${baseurl}/api/user/login/`,{
+            username:username,
+            password:password,
+        
+        }).then((res)=>{
+        
+            if(!res.data.error){
+                const token =JSON.stringify(res.data.token);
+                localStorage.setItem("jwt", token);
+                navigate("/")
+                setError("")
+                
+            }
+            else{
+           
+            setError("Password Invalid")
+            }
+        
+
+        })
+    }
     return(
         <div className='main-login'>
         <div className='flex-container'>
@@ -36,9 +56,20 @@ function handle(event){
             </div>
             <div clasName='forms'>
          
-                <input className='email'type='email' onChange={handle} name="email" placeholder='Email' value={loginInfo.email} />
+                <input 
+                className='email'
+                type='email' 
+                onChange={(event)=>{
+                    setUserName(event.target.value)
+                }} 
+                 placeholder='username'/>
+
                 <br />
-                <input className='email'type='Password' onChange={handle} name="password"placeholder='Password' value={loginInfo.password} />
+
+                <input className='email'type='password' onChange={(event)=>{
+                    setPassword(event.target.value)
+                   
+                }} placeholder='Password'  />
 
             </div>
             <div className='BOX'>
@@ -47,7 +78,8 @@ function handle(event){
                 <p className='forget'>Forget password</p>
             </div>
             
-                <button className="Login">Login</button>
+                <button className="Login" onClick={Add}>Login</button>
+                <p style={{color:"red"}}>{error}</p>
                 <div className='else'>
                     <p>Don't have an account? <span className='signup'><Link to="/signup">Signup</Link></span></p></div>
                 </div>
